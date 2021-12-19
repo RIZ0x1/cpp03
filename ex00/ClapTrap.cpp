@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string Name) : Name(Name)
+ClapTrap::ClapTrap() : Name("Mr. Noname")
 {
 	this->Hitpoints = 10;
 	this->EnergyPoints = 10;
@@ -10,6 +10,16 @@ ClapTrap::ClapTrap(std::string Name) : Name(Name)
 		<< " has been created with default settings;" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string Name) : Name(Name)
+{
+	this->Hitpoints = 10;
+	this->EnergyPoints = 10;
+	this->AttackDamage = 0;
+
+	std::cout << "A character " << YELLOW << this->Name << NORMAL
+		<< " has been created and named;" << std::endl;
+}
+
 ClapTrap::ClapTrap(const ClapTrap &init_obj)
 {
 	this->Hitpoints = init_obj.Hitpoints;
@@ -17,11 +27,13 @@ ClapTrap::ClapTrap(const ClapTrap &init_obj)
 	this->AttackDamage = init_obj.AttackDamage;
 
 	std::cout << "A character " << YELLOW << this->Name << NORMAL
-		<< " has been created with given settings;" << std::endl;
+		<< " has been created with copy constructor;" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "A character " << YELLOW << this->Name << NORMAL
+		<< " has been deleted;" << std::endl;
 }
 
 void	ClapTrap::attack(std::string const &target)
@@ -46,3 +58,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "A character: " << YELLOW << this->Name << NORMAL
 		<< " used cheat-code that repairs he's HP; Repaired HP: " << amount << std::endl;
 }
+
+ClapTrap&	ClapTrap::operator=(ClapTrap const &obj)
+{
+	this->Hitpoints = obj.Hitpoints;
+	this->EnergyPoints = obj.EnergyPoints;
+	this->AttackDamage = obj.AttackDamage;
+
+	return (*this);
+}
+

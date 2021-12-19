@@ -16,12 +16,15 @@ class ClapTrap
 	unsigned int		AttackDamage;
 
 public:
-	ClapTrap(std::string Name);
+	ClapTrap();
+	ClapTrap(const std::string Name);
 	ClapTrap(const ClapTrap&);
 	~ClapTrap();
 
 	void	attack(std::string const &);
 	void	takeDamage(unsigned int);
 	void	beRepaired(unsigned int);
+
+	ClapTrap&	operator=(ClapTrap const &);
 
 };
