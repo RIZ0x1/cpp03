@@ -60,6 +60,12 @@ void	FragTrap::beRepaired(unsigned int amount)
 		<< " used cheat-code that repairs he's HP; Repaired HP: " << amount << std::endl;
 }
 
+void	FragTrap::highFivesGuys(void)
+{
+	std::cout << std::cout << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+		<< " GiVEs hiGh101 fO Ya!" << std::endl;
+}
+
 FragTrap&	FragTrap::operator=(FragTrap &obj)
 {
 	this->Hitpoints = obj.Hitpoints;

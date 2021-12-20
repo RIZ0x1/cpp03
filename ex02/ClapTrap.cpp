@@ -5,9 +5,9 @@ ClapTrap::ClapTrap()
 	this->Hitpoints = 10;
 	this->EnergyPoints = 10;
 	this->AttackDamage = 0;
-	this->Name = std::string("Mr. Noname");
+	this->Name = std::string("Mr. Jay");
 
-	std::cout << "A character " << YELLOW << this->Name << NORMAL
+	std::cout << BLUE << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " has been created with default and without name;" << std::endl;
 }
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(std::string Name) : Name(Name)
 	this->EnergyPoints = 50;
 	this->AttackDamage = 20;
 
-	std::cout << "A character " << YELLOW << this->Name << NORMAL
+	std::cout << BLUE << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " has been created with default settings;" << std::endl;
 }
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &init_obj)
 	this->EnergyPoints = init_obj.EnergyPoints;
 	this->AttackDamage = init_obj.AttackDamage;
 
-	std::cout << "A character " << YELLOW << this->Name << NORMAL
+	std::cout << BLUE << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " has been created with given settings;" << std::endl;
 }
 
@@ -39,7 +39,7 @@ ClapTrap::~ClapTrap()
 
 void	ClapTrap::attack(std::string const &target)
 {
-	std::cout << "A character " << YELLOW << this->Name << NORMAL
+	std::cout << BLUE << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " attack " << target << ';' << " Given damage: " << this->AttackDamage << std::endl;
 }
 
@@ -47,7 +47,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	this->Hitpoints -= amount;
 
-	std::cout << "A character: " << YELLOW << this->Name << NORMAL
+	std::cout << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " takes damage. But we're in the" << GREEN << " Matrix" << NORMAL
 		<< ", so he'll be fine; Taken damage: " << amount << std::endl;
 }
@@ -56,7 +56,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	this->Hitpoints += amount;
 
-	std::cout << "A character: " << YELLOW << this->Name << NORMAL
+	std::cout << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " used cheat-code that repairs he's HP; Repaired HP: " << amount << std::endl;
 }
 
@@ -66,6 +66,8 @@ ClapTrap&	ClapTrap::operator=(ClapTrap &obj)
 	this->EnergyPoints = obj.EnergyPoints;
 	this->AttackDamage = obj.AttackDamage;
 
-	std::cout << "A character: " << YELLOW << this->Name << NORMAL
+	std::cout << "[ClapTrap]: " << YELLOW << this->Name << NORMAL
 		<< " stopped being himself and became someone else... what a shame;" << std::endl;
+
+	return (*this);
 }

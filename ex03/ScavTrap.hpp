@@ -16,10 +16,10 @@ public:
 	ScavTrap(std::string);
 	~ScavTrap();
 
-	void	attack(std::string const &);
-	void	takeDamage(unsigned int);
-	void	beRepaired(unsigned int);
-	void	guardGate();
+	virtual void	attack(std::string const &);
+	virtual void	takeDamage(unsigned int);
+	virtual void	beRepaired(unsigned int);
+	virtual void	guardGate();
 
 	ScavTrap&	operator=(ScavTrap&);
 };

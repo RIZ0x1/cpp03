@@ -15,10 +15,10 @@ public:
 	FragTrap(std::string);
 	~FragTrap();
 
-	void	attack(std::string const &);
-	void	takeDamage(unsigned int);
-	void	beRepaired(unsigned int);
-	void	highFivesGuys(void);
+	virtual void	attack(std::string const &);
+	virtual void	takeDamage(unsigned int);
+	virtual void	beRepaired(unsigned int);
+	virtual void	highFivesGuys(void);
 
 	FragTrap& operator=(FragTrap &FragTrap);
 };

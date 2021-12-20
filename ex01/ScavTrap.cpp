@@ -1,5 +1,16 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+	this->Hitpoints = 100;
+	this->EnergyPoints = 50;
+	this->AttackDamage = 20;
+	this->Name = std::string("Mr. Jonah");
+
+	std::cout << RED << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
+		<< " has been created with default and without name;" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string Name) : Name(Name)
 {
 	this->Hitpoints = 100;
