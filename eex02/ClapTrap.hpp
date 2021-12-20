@@ -10,14 +10,13 @@
 
 class ClapTrap
 {
-	const std::string	Name;
-	unsigned int		Hitpoints;
-	unsigned int		EnergyPoints;
-	unsigned int		AttackDamage;
+	std::string		Name;
+	unsigned int	Hitpoints;
+	unsigned int	EnergyPoints;
+	unsigned int	AttackDamage;
 
 public:
-	ClapTrap();
-	ClapTrap(const std::string Name);
+	ClapTrap(std::string Name);
 	ClapTrap(const ClapTrap&);
 	~ClapTrap();
 
@@ -25,6 +24,5 @@ public:
 	void	takeDamage(unsigned int);
 	void	beRepaired(unsigned int);
 
-	ClapTrap&	operator=(ClapTrap const &);
-
+	ClapTrap&	operator=(ClapTrap &);
 };

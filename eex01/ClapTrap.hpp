@@ -11,7 +11,6 @@
 
 class ClapTrap
 {
-<<<<<<< HEAD
 	std::string		Name;
 	unsigned int	Hitpoints;
 	unsigned int	EnergyPoints;
@@ -20,17 +19,6 @@ class ClapTrap
 public:
 	ClapTrap();
 	ClapTrap(std::string Name);
-=======
-protected:
-	std::string	Name;
-	unsigned int		Hitpoints;
-	unsigned int		EnergyPoints;
-	unsigned int		AttackDamage;
-
-public:
-	ClapTrap();
-	ClapTrap(const std::string Name);
->>>>>>> 50c8cf15acfc7acbf10922b8065810dc4f72f524
 	ClapTrap(const ClapTrap&);
 	~ClapTrap();
 
@@ -38,10 +26,5 @@ public:
 	virtual void	takeDamage(unsigned int);
 	virtual void	beRepaired(unsigned int);
 
-<<<<<<< HEAD
 	ClapTrap&	operator=(ClapTrap &);
-=======
-	ClapTrap	operator=(ClapTrap const &);
->>>>>>> 50c8cf15acfc7acbf10922b8065810dc4f72f524
 };
-
