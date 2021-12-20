@@ -7,21 +7,24 @@
 #define RED "\033[31;1;1m"
 #define GREEN "\033[32;1;1m"
 #define YELLOW "\033[33;1;1m"
+#define BLUE "\033[34m"
 
 class ClapTrap
 {
-	const std::string	Name;
-	unsigned int		Hitpoints;
-	unsigned int		EnergyPoints;
-	unsigned int		AttackDamage;
+	std::string		Name;
+	unsigned int	Hitpoints;
+	unsigned int	EnergyPoints;
+	unsigned int	AttackDamage;
 
 public:
+	ClapTrap();
 	ClapTrap(std::string Name);
 	ClapTrap(const ClapTrap&);
 	~ClapTrap();
 
-	void	attack(std::string const &);
-	void	takeDamage(unsigned int);
-	void	beRepaired(unsigned int);
+	virtual void	attack(std::string const &);
+	virtual void	takeDamage(unsigned int);
+	virtual void	beRepaired(unsigned int);
 
+	ClapTrap&	operator=(ClapTrap &);
 };

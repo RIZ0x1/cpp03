@@ -1,4 +1,4 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main()
 {
@@ -12,8 +12,12 @@ int	main()
 	neo.attack("Mr. Smith");
 	smith.takeDamage(4);
 
-	std::cout << YELLOW << "Mr. Smith" << NORMAL << " is dead. But we're in the "
-		<< GREEN << "Matrix..." << NORMAL << std::endl;
+	ScavTrap	trinity("Trinity");
+
+	trinity.attack("Mr. Smith");
+	smith.takeDamage(0);
+	neo.attack("Trinity");
+	trinity.takeDamage(100);
 
 	return (0);
 }
