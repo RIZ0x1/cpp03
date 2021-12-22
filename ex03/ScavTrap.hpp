@@ -4,6 +4,7 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+protected:
 	bool			in_guard_gate_mode;
 
 public:

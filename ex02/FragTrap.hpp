@@ -4,10 +4,6 @@
 
 class FragTrap : public ClapTrap
 {
-	std::string		Name;
-	unsigned int	Hitpoints;
-	unsigned int	EnergyPoints;
-	unsigned int	AttackDamage;
 
 public:
 	FragTrap();

@@ -12,8 +12,9 @@ DiamondTrap::DiamondTrap()
 		<< " has been created with default settings and without name;" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name"), FragTrap(Name), ScavTrap(Name)
 {
+	this->Name = Name;
 	this->Hitpoints = 100;
 	this->EnergyPoints = 50;
 	this->AttackDamage = 20;
@@ -63,7 +64,7 @@ void	DiamondTrap::beRepaired(unsigned int amount)
 
 void	DiamondTrap::highFivesGuys(void)
 {
-	std::cout << RED << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
 		<< " GiVEs hiGh101 fO Ya!" << std::endl;
 }
 
@@ -75,6 +76,12 @@ void	DiamondTrap::guardGate(void)
 		std::cout << " intered into guard gate mode;" << std::endl;
 	else
 		std::cout << " exited from guard gate mode;" << std::endl;
+}
+
+void	DiamondTrap::whoAmI(void)
+{
+	std::cout << RED << "[DiamondTrap]: " << "My name is " << YELLOW << this->Name << NORMAL << std::endl;
+	std::cout << RED << "[DiamondTrap]: " << "My father's name is " << YELLOW << ClapTrap::Name << NORMAL << std::endl;
 }
 
 DiamondTrap&	DiamondTrap::operator=(DiamondTrap &obj)

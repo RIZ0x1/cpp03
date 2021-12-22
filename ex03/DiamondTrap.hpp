@@ -1,9 +1,9 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
-	bool	in_guard_gate_mode;
+	std::string	Name;
 
 public:
 	DiamondTrap();
@@ -16,6 +16,7 @@ public:
 	void	beRepaired(unsigned int);
 	void	highFivesGuys(void);
 	void	guardGate(void);
+	void	whoAmI(void);
 
-	DiamondTrap& operator=(DiamondTrap &DiamondTrap);	
+	DiamondTrap& operator=(DiamondTrap &DiamondTrap);
 };
