@@ -8,10 +8,10 @@ ScavTrap::ScavTrap()
 	this->Name = std::string("Mr. Jonah");
 
 	std::cout << RED << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
-		<< " has been created with default and without name;" << std::endl;
+		<< " has been created with default settings and without name;" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string Name) : Name(Name)
+ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 {
 	this->Hitpoints = 100;
 	this->EnergyPoints = 50;
@@ -47,7 +47,7 @@ void	ScavTrap::takeDamage(unsigned int amount)
 {
 	this->Hitpoints -= amount;
 
-	std::cout << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
 		<< " takes damage. But we're in the" << GREEN << " Matrix" << NORMAL
 		<< ", so he'll be fine; Taken damage: " << amount << std::endl;
 }
@@ -56,8 +56,18 @@ void	ScavTrap::beRepaired(unsigned int amount)
 {
 	this->Hitpoints += amount;
 
-	std::cout << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
 		<< " used cheat-code that repairs he's HP; Repaired HP: " << amount << std::endl;
+}
+
+void	ScavTrap::guardGate(void)
+{
+	std::cout << RED << "[ScavTrap]: " << YELLOW << this->Name << NORMAL << std::endl;
+
+	if (this->guard_gate_mode)
+		std::cout << " intered into guard gate mode;" << std::endl;
+	else
+		std::cout << " exited from guard gate mode;" << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(ScavTrap &obj)
@@ -66,7 +76,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap &obj)
 	this->EnergyPoints = obj.EnergyPoints;
 	this->AttackDamage = obj.AttackDamage;
 
-	std::cout << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[ScavTrap]: " << YELLOW << this->Name << NORMAL
 		<< " stopped being himself and became someone else... what a shame;" << std::endl;
 
 	return (*this);

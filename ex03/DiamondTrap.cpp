@@ -5,14 +5,14 @@ DiamondTrap::DiamondTrap()
 	this->Hitpoints = 10;
 	this->EnergyPoints = 10;
 	this->AttackDamage = 0;
-	this->guard_gate_mode = false;
+	this->in_guard_gate_mode = false;
 	this->Name = std::string("Mr. Jonah");
 
 	std::cout << RED << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
-		<< " has been created with default and without name;" << std::endl;
+		<< " has been created with default settings and without name;" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string Name) : Name(Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name)
 {
 	this->Hitpoints = 100;
 	this->EnergyPoints = 50;
@@ -48,7 +48,7 @@ void	DiamondTrap::takeDamage(unsigned int amount)
 {
 	this->Hitpoints -= amount;
 
-	std::cout << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
 		<< " takes damage. But we're in the" << GREEN << " Matrix" << NORMAL
 		<< ", so he'll be fine; Taken damage: " << amount << std::endl;
 }
@@ -57,18 +57,24 @@ void	DiamondTrap::beRepaired(unsigned int amount)
 {
 	this->Hitpoints += amount;
 
-	std::cout << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
 		<< " used cheat-code that repairs he's HP; Repaired HP: " << amount << std::endl;
 }
 
 void	DiamondTrap::highFivesGuys(void)
 {
-
+	std::cout << RED << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+		<< " GiVEs hiGh101 fO Ya!" << std::endl;
 }
 
 void	DiamondTrap::guardGate(void)
 {
+	std::cout << RED << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL << std::endl;
 
+	if (this->in_guard_gate_mode)
+		std::cout << " intered into guard gate mode;" << std::endl;
+	else
+		std::cout << " exited from guard gate mode;" << std::endl;
 }
 
 DiamondTrap&	DiamondTrap::operator=(DiamondTrap &obj)
@@ -77,7 +83,7 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap &obj)
 	this->EnergyPoints = obj.EnergyPoints;
 	this->AttackDamage = obj.AttackDamage;
 
-	std::cout << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << RED << "[DiamondTrap]: " << YELLOW << this->Name << NORMAL
 		<< " stopped being himself and became someone else... what a shame;" << std::endl;
 
 	return (*this);

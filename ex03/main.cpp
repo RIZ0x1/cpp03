@@ -1,5 +1,4 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main()
 {
@@ -25,6 +24,15 @@ int	main()
 	cypher.attack("Trinity");
 	trinity.takeDamage(01);
 	cypher.highFivesGuys();
+
+	DiamondTrap	architect("Architect");
+
+	architect.attack("Tomas Anderson");
+	neo.takeDamage(-1);
+	architect.attack("Tomas Anderson");
+	neo.takeDamage(-1);
+	neo.~ClapTrap();
+	architect.highFivesGuys();
 
 	return (0);
 }

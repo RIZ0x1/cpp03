@@ -4,10 +4,6 @@
 
 class ScavTrap : public ClapTrap
 {
-	std::string		Name;
-	unsigned int	Hitpoints;
-	unsigned int	EnergyPoints;
-	unsigned int	AttackDamage;
 	bool			guard_gate;
 
 public:

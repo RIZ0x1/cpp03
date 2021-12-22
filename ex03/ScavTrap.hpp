@@ -2,13 +2,9 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
-	std::string		Name;
-	unsigned int	Hitpoints;
-	unsigned int	EnergyPoints;
-	unsigned int	AttackDamage;
-	bool			guard_gate;
+	bool			in_guard_gate_mode;
 
 public:
 	ScavTrap();

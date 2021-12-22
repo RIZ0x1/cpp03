@@ -7,11 +7,11 @@ FragTrap::FragTrap()
 	this->AttackDamage = 30;
 	this->Name = std::string("Mr. Jameson");
 
-	std::cout << RED << "[FragTrap]: " << YELLOW << this->Name << NORMAL
-		<< " has been created with default and without name;" << std::endl;
+	std::cout << MAGENTA << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+		<< " has been created with default settings and without name;" << std::endl;
 }
 
-FragTrap::FragTrap(std::string Name) : Name(Name)
+FragTrap::FragTrap(std::string Name) : ClapTrap(Name)
 {
 	this->Hitpoints = 100;
 	this->EnergyPoints = 100;
@@ -47,7 +47,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 {
 	this->Hitpoints -= amount;
 
-	std::cout << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << MAGENTA << "[FragTrap]: " << YELLOW << this->Name << NORMAL
 		<< " takes damage. But we're in the" << GREEN << " Matrix" << NORMAL
 		<< ", so he'll be fine; Taken damage: " << amount << std::endl;
 }
@@ -56,8 +56,14 @@ void	FragTrap::beRepaired(unsigned int amount)
 {
 	this->Hitpoints += amount;
 
-	std::cout << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << MAGENTA << "[FragTrap]: " << YELLOW << this->Name << NORMAL
 		<< " used cheat-code that repairs he's HP; Repaired HP: " << amount << std::endl;
+}
+
+void	FragTrap::highFivesGuys(void)
+{
+	std::cout << MAGENTA << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+		<< " GiVEs hiGh101 fO Ya!" << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(FragTrap &obj)
@@ -66,7 +72,7 @@ FragTrap&	FragTrap::operator=(FragTrap &obj)
 	this->EnergyPoints = obj.EnergyPoints;
 	this->AttackDamage = obj.AttackDamage;
 
-	std::cout << "[FragTrap]: " << YELLOW << this->Name << NORMAL
+	std::cout << MAGENTA << "[FragTrap]: " << YELLOW << this->Name << NORMAL
 		<< " stopped being himself and became someone else... what a shame;" << std::endl;
 
 	return (*this);

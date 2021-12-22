@@ -2,12 +2,8 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
-	std::string		Name;
-	unsigned int	Hitpoints;
-	unsigned int	EnergyPoints;
-	unsigned int	AttackDamage;
 
 public:
 	FragTrap();

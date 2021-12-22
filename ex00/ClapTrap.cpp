@@ -8,7 +8,7 @@ ClapTrap::ClapTrap()
 	this->Name = std::string("Mr. Noname");
 
 	std::cout << "A character " << YELLOW << this->Name << NORMAL
-		<< " has been created with default and without name;" << std::endl;
+		<< " has been created with default settings and without name;" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string Name) : Name(Name)

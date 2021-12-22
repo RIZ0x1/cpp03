@@ -3,11 +3,7 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
-	std::string		Name;
-	unsigned int	Hitpoints;
-	unsigned int	EnergyPoints;
-	unsigned int	AttackDamage;
-	bool			guard_gate_mode;
+	bool	in_guard_gate_mode;
 
 public:
 	DiamondTrap();
