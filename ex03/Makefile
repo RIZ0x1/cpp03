@@ -23,5 +23,5 @@ good: all clean
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o out
 
-%.o: %.c
+%.o: %.c $(HDRS)
 	$(CC) $(FLGS) $<
